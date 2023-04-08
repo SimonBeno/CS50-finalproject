@@ -22,7 +22,11 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///habits.db")
+#->db = SQL("sqlite:///habits.db")
+db_url = "sqlite:///habits.db"
+engine = create_engine(db_url)
+db = SQL(engine)
+
 
 @app.after_request
 def after_request(response):
