@@ -25,8 +25,7 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 #->db = SQL("sqlite:///habits.db")
 db_url = "sqlite:///habits.db"
-engine = create_engine(db_url)
-db = SQL(engine)
+db = SQL(db_url) 
 
 
 @app.after_request
